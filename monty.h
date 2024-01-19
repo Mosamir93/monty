@@ -40,6 +40,22 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct arguments - structure to be used globally
+ * throughout the whole interpreter
+ * @line: line of text read from the file
+ * @stream: file pointer to the opened file
+ * @instruct: instruction obtained from each line
+ * @tokens_num: the number of tokens obtained
+ * @line_num: the line number thats instruction and token obtained from
+ * @tokens: ana array of tokens
+ * @head: pointer to the stack to store the head of it
+ * @s: int to store 1 if FIFO format 0 if LIFO
+ * @s_len: length of the stack
+ *
+ * Description: structure to be used globally to store info about the
+ * instructions, tokens, file, stack and it's format
+ */
 typedef struct arguments
 {
 	char *line;
@@ -56,7 +72,6 @@ typedef struct arguments
 extern arg_s *args;
 
 void args_init(void);
-int main(int argc, char **argv);
 void check_args(int a);
 void get_code(char *file);
 void get_code_fail(char *file);
@@ -70,8 +85,8 @@ void tokens_free(void);
 void exec_command(void);
 void push(stack_t **s, unsigned int line_num);
 void pall(stack_t **s, unsigned int line_num);
-void args_free();
-void all_free (void);
+void args_free(void);
+void all_free(void);
 void pint(stack_t **s, unsigned int line_num);
 void pop(stack_t **s, unsigned int line_num);
 void swap(stack_t **s, unsigned int line_num);
