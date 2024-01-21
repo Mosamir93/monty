@@ -15,7 +15,7 @@ void args_init(void)
 
 	args->line = NULL;
 	args->stream = NULL;
-	args->line_num = 0;
+	args->line_num = 1;
 	args->tokens_num = 0;
 	args->instruct = malloc(sizeof(instruction_t));
 	args->s_len = 0;

@@ -38,9 +38,9 @@ void args_free(void)
 
 void all_free(void)
 {
-	args_free();
 	close_file();
 	tokens_free();
+	args_free();
 }
 
 /**
