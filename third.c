@@ -59,7 +59,7 @@ void push(stack_t **s, unsigned int line_num)
 {
 	stack_t *t;
 
-	if (!(_isdigit(args->tokens[1])) || args->tokens_num <= 1)
+	if (!(_isdigit(args->tokens[1])) || args->tokens_num != 2)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_num);
 		all_free();

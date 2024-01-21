@@ -8,4 +8,4 @@ pop
 pall
 pop
 pall
-push jshjhdshdjshd
+push -1024 + push 123a
